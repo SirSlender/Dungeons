@@ -21,7 +21,9 @@ public class Dungeons extends JavaPlugin
 	public void onEnable()
 	{
 		prefix = ChatColor.translateAlternateColorCodes('&', this.getConfig().getString("Prefix"));
-		noPerm = prefix + ChatColor.RED + "You don't have permission to perform this action!";		
+		noPerm = prefix + ChatColor.RED + "You don't have permission to perform this action!";	
+		CommandHandler handler = new CommandHandler();
+		handler.register("dungeon", new DungeonCommandBase());
 	}
 	
 	@Override
